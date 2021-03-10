@@ -15,14 +15,14 @@ let tableTag = class tableTag extends LitElement {
             this.no = 0;
     }
     demo(event) {
-        debugger;
         //from event fetching the id of record for deleting from array
         const id = event.path[2].innerText.toString().slice(0, 1);
         // console.log(this.empArray);
         // console.log(this.empArray.splice(id,1));
         console.log(id);
-        this.empArray.splice(id, 1);
+        console.log("before splice", this.empArray.length);
         console.log(this.empArray.splice(id, 1));
+        console.log("after splice", this.empArray.length);
         this.render();
     }
     render() {
@@ -48,6 +48,7 @@ let tableTag = class tableTag extends LitElement {
         if (this.empArray.length) {
             if (this.empArray[0].name === "undefined")
                 this.empArray.pop();
+            console.log("before render", this.empArray);
             return html `<h3></h3>
             <table id='td' border='1px solid black'>
             <tr>

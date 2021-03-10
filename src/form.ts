@@ -113,6 +113,7 @@ export class userForm extends LitElement{
             this.shadowRoot?.getElementById('noError').innerHTML="";
             console.log("values at child component : ",this.empName+" "+this.empNo+" "+this.empCity);
             this.sendToParent();          //calling function where custom event is defined
+            
             return true;
           }
           if(flag==0)
@@ -148,19 +149,19 @@ export class userForm extends LitElement{
           <fieldset>
           <legend>Enter your details :</legend>
               <div class='row'>
-              <p class="col">Name : </p>
+              <p class="col">Name<span>*</span> : </p>
               <input type='text' class='col' id='name' value='${this.empName}' placeholder="Enter name"><br><br>
               <span class='col' id='nameError'></span><br><br>
               </div>
               
               <div class='row'>
-              <p class="col">City : </p>
+              <p class="col">City<span>*</span> : </p>
               <input type='text' class='col' id='city' value='${this.empCity}' placeholder="Enter your city"><br><br>
               <span class='col' id='cityError'></span><br><br>
               </div>
               
               <div class='row'>
-              <p class="col">Mobile No : </p>
+              <p class="col">Mobile No<span>*</span> : </p>
               <input type='text' class='col' id='phoneNo' value='${this.empNo}' placeholder="Enter phone no"><br><br>
               <span class='col' id='noError'></span><br><br>
               </div>
